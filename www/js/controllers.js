@@ -1,15 +1,5 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', ['$scope', 'Construct', function($scope, Construct) {
-    Construct.find("Electric Joule Heating", function(found) {
-        if (found) {
-            $scope.construct = found;
-        } else {
-            $scope.none = "No such construct exists";
-        }
-    })
-}])
-
 .controller('ProfileCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
