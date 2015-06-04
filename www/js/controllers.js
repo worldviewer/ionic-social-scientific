@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('ProfileCtrl', function($scope) {})
+.controller('HomeCtrl', function($scope) {})
+
+.controller('HelpCtrl', function($scope) {})
 
 // .controller('ChatsCtrl', function($scope, Chats) {
 //   // With the new view caching in Ionic, Controllers are only called
@@ -27,7 +29,9 @@ angular.module('starter.controllers', [])
 //   };
 // })
 
-.controller('ModelCtrl', ['$scope', '$state', 'Construct', function($scope, $state, Construct) {
+.controller('ModelCtrl', ['$scope', 'Construct', function($scope, 
+  Construct, $stateParams) {
+
     Construct.find("Electric Joule Heating", function(found) {
         if (found) {
             $scope.construct = found;
@@ -38,18 +42,14 @@ angular.module('starter.controllers', [])
 }])
 
 // Propositions are tracked by id
-.controller('PropositionCtrl', ['$scope', '$state', '$stateParams', 'Proposition', function($scope, Proposition, $stateParams, $state) {
+.controller('PropositionCtrl', function($scope, Proposition, $stateParams) {
 
-    $scope.propositions = Propositions.all();
-
-    console.log($stateParams.propId);
-    Proposition.find($stateParams.propId, function(found) {
+    Proposition.find(0, function(found) {
         if (found) {
             $scope.proposition = found;
-            console.log(found);
         } else {
             $scope.none = "No such construct exists";
         }
     })
-}]);
+});
 

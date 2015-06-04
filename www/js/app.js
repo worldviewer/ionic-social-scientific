@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         url: "/tab",
         abstract: true,
         templateUrl: "templates/tabs.html"
-})
+    })
 
     // Each tab has its own nav history stack:
 
@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-home': {
                 templateUrl: 'templates/tab-home.html',
-                // controller: 'ChatsCtrl'
+                controller: 'HomeCtrl'
             }
         }
     })
@@ -65,18 +65,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-help': {
                 templateUrl: 'templates/tab-help.html',
-                // controller: 'ChatsCtrl'
+                controller: 'HelpCtrl'
             }
         }
     })
 
     // Worldview-level
-    // WILL NEED TO SWITCH THIS TO /proposition/:propId ...
-    .state('tab.proposition', {
-        url: '/propositions/:propId',
-        templateUrl: "templates/tab-proposition.html",
-        controller: 'PropositionCtrl'
+
+    .state('proposition', {
+        url: "/propositions",
+        abstract: true,
+        templateUrl: "templates/propositions.html"
     })
+
+    .state('proposition.id', {
+        url: '/:propId',
+        views: {
+            'proposition-id': {
+                templateUrl: "templates/proposition-id.html",
+                controller: 'PropositionCtrl'
+            }
+        }
+    });
 
     //   .state('tab.chat-detail', {
     //     url: '/chats/:chatId',

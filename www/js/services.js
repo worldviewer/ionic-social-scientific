@@ -9,7 +9,7 @@ angular.module('starter.services', [])
     id: 0,
     name: "Cosmic Plasma Debate",
     description: "There has been a debate over how to model cosmic plasmas (such as the solar wind) for more than half a century between the Astrophysical Journal and IEEE's Transactions on Plasma Science.",
-    type: "claim",
+    type: "Claim",
     support: {
 
     },
@@ -93,7 +93,7 @@ angular.module('starter.services', [])
   this.find = function(searchId, cb) {
       for (var i=0; i < propositions.length; i++) {
           var proposition = propositions[i];
-          if (proposition.id === searchId) {
+          if (parseInt(proposition.id) === parseInt(searchId)) {
               return cb(proposition);
           }
       }
