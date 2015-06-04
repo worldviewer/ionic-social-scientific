@@ -59,7 +59,7 @@ However, this approach comes with some costly side-effects -- namely that:
 
 * The refusal to fully and meaningfully engage both sides of scientific controversies creates what I like to call "innovation bottlenecks".  As a methodology, such an approach assumes that it knows the answer to a big question when in fact the community of scientists have collectively decided not to rationally engage the other side of the issue.  Such an approach can be expected to be extremely costly to society's future standard of living insofar as these controversies can be expected to basically block certain scientific discoveries.
 
-## A Prototype for a Solution: A Mobile Gesture-Based Scientific Article Reader that Teaches Epistemology, Worldviews, History and Philosophy of Science through Use of the App
+## A Prototype for a Solution: A Mobile App that Teaches Epistemology, Worldviews, History and Philosophy of Science through Controversies and Against-the Mainstream Scientific Claims
 
 My name is Chris Reeve and I've spent a decade closely following the issues faced by a group of scientific theorists who have been engaged in a bitter dispute for more than half a century.  The two sides of this debate publish in two different scientific journals -- the _Astrophysical Journal_ and IEEE's _Transactions on Plasma Science_.  I've used this highly complex debate over how to model the universe's fundamental state for matter, *plasma*, as a prototypical controversy to design a solution.  My approach contrasts sharply with <a href="https://plus.google.com/+ChrisReeveOnlineScientificDiscourseIsBroken/posts/ZyWHQxTUk53">Google's approach for their truth engine</a>, where they test their system with the debate over Obama's birth certificate.
 
@@ -95,7 +95,13 @@ The gist of my intention here, in part, is to normalize the clash-of-worldviews 
 
 (Due to implementation complexity, most of this level will not make it into the MVP.)
 
-The mobile app will encode this epistemological hierarchy with swipe gestures: From the central locus of the article (the main view), swiping left or right from this article takes the reader to an annotated view or a map of the key concepts for that article (which would eventually link into a much larger graph of concepts).  So, this first level is the **concept and resource (article) view**.
+~~The mobile app will encode this epistemological hierarchy with swipe gestures: From the central locus of the article (the main view), swiping left or right from this article takes the reader to an annotated view or a map of the key concepts for that article (which would eventually link into a much larger graph of concepts)~~.
+
+Note: Through immersion in the web app format, it's apparent that the gesture-based navigation scheme is not optimal, as it would reduce the number app elements that can be used.  Instead, what I recommend is to simply show an animation during the slide which shows the user in animations the epistemological transition that is being made.
+
+That being the case, the app is much simplified for now, as I can currently just use the transitions.
+
+So, this first level is the **concept and resource (article) view**.
 
 ### The Propositional Level of Discourse (aka the Adjacent Possible)
 

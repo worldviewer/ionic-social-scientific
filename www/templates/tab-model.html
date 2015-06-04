@@ -11,13 +11,17 @@
                 <img ng-src="{{headerimage}}">
             </div>
 
-            <h4>Key Claims</h4>
+            <!-- For now, just mock the proposition id's with $index -->
+
+            <h4>Key Propositions</h4>
             <ion-list class="item-text-wrap">
-                <div ng-repeat="point in construct.longDefinition">
-                    <ion-item class="item item-icon-right">
+                <div ng-repeat="point in construct.longDefinition track by $index">
+
+                    <a href="#/tab/propositions/{{$index}}" class="item item-icon-right">
                         <p>{{point}}</p>
                         <i class="icon ion-chevron-right"></i>
-                    </ion-item>
+                    </a>
+
                 </div>
             </ion-list>
 
@@ -352,7 +356,6 @@
             See more media ...</a>
         </ion-list>
 
-        <br><br><br>
     </ion-content>
 
 </ion-view>

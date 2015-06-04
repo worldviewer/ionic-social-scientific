@@ -36,14 +36,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         templateUrl: "templates/tabs.html"
 })
 
-  // Each tab has its own nav history stack:
+    // Each tab has its own nav history stack:
 
-    .state('tab.construct', {
-        url: '/construct',
+    // Tabbed Views
+    // WILL NEED TO SWITCH THIS TO /model/:modelId ...
+    .state('tab.model', {
+        url: '/model',
         views: {
-            'tab-construct': {
-                templateUrl: 'templates/tab-construct.html',
-                controller: 'ConstructCtrl'
+            'tab-model': {
+                templateUrl: 'templates/tab-model.html',
+                controller: 'ModelCtrl'
             }
         }
     })
@@ -53,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-home': {
                 templateUrl: 'templates/tab-home.html',
-                controller: 'ChatsCtrl'
+                // controller: 'ChatsCtrl'
             }
         }
     })
@@ -63,9 +65,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-help': {
                 templateUrl: 'templates/tab-help.html',
-                controller: 'ChatsCtrl'
+                // controller: 'ChatsCtrl'
             }
         }
+    })
+
+    // Worldview-level
+    // WILL NEED TO SWITCH THIS TO /proposition/:propId ...
+    .state('tab.proposition', {
+        url: '/propositions/:propId',
+        templateUrl: "templates/tab-proposition.html",
+        controller: 'PropositionCtrl'
     })
 
     //   .state('tab.chat-detail', {
@@ -95,6 +105,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     // });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/construct');
+    $urlRouterProvider.otherwise('/tab/model');
 
 });
