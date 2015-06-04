@@ -10,13 +10,54 @@ angular.module('starter.services', [])
     name: "Cosmic Plasma Debate",
     description: "There has been a debate over how to model cosmic plasmas (such as the solar wind) for more than half a century between the Astrophysical Journal and IEEE's Transactions on Plasma Science.",
     type: "Claim",
-    support: {
+    headerimages: ["img/journals/AJ-vs-IEEE.jpg", ],
+    support: [{images: ["img/books/the-electric-universe-on-astrophysicists.jpg"],
+               title: "Some Electrical Theorists Have Claimed that Astrophysicists Are Not Equipped to Interpet Electrical Astronomical Events",
+               icon: "img/experts/wal-thornhill.jpg",
+               text: null,
+               source: "The Electric Universe",
+               author: "@WalThornhill",
+               URL: "http://www.amazon.com/Electric-Universe-Wallace-Thornhill-Talbott/dp/0977285138/"
 
-    },
+             }, {
+
+              images: ["img/journals/IEEE-largest-technical-society-thin.jpg"],
+              title: "What is IEEE?",
+              icon: "img/journals/IEEE.png",
+              text: null,
+              source: "IEEE's Website",
+              author: null,
+              URL: "https://www.ieee.org/about/ieee_history.html"
+
+             }, {
+
+              images: ["img/infographics/hannes-alfven-bio-small.jpg"],
+              title: "The Debate Was Begun by the Nobel Laureate Who Invented the Cosmic Plasma Models Used by Astrophysicists to this Day",
+              icon: "img/experts/david-talbott.jpg",
+              text: null,
+              source: "Edge Magazine (original article currently not online)",
+              author: "@DavidTalbott",
+              URL: "https://plus.google.com/108466508041843226480/posts/YoTuHGL16ur"
+
+             }, {
+
+              images: ["img/forums/is-tim-thompson-on-ieee.jpg"],
+              title: "An Example of an Astrophysicist Advising His Colleagues to Avoid Reading IEEE",
+              icon: "img/experts/tim-thompson.jpg",
+              text: null,
+              source: "International Skeptics Forum",
+              author: "@TimThompson",
+              URL: "http://www.internationalskeptics.com/forums/showpost.php?s=808a20363648151505620e5b174cdc4c&p=4782369&postcount=8%EF%BB%BF"
+
+             }],
 
   }, {
 
-    name: "Conventional theory models this flow of charged particles fundamentally as a fluid, but these models have been in dispute since their inception.",
+    id: 1,
+    name: "Plasmas Are Not Simply Fluids",
+    description: "Conventional theory models this flow of charged particles fundamentally as a fluid governed most significantly by gravity, but these models have been in dispute since their inception.",
+    type: "Claim",
+    headerimages: [""],
     supportingclaims: {
 
     }    

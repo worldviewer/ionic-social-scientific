@@ -7,6 +7,37 @@
 		<div>
 			<p><strong>{{proposition.description}}</strong></p>
 
+			<div ng-repeat="image in proposition.headerimages" ng-show="proposition.headerimages">
+				<img ng-src="{{image}}">
+	            <div class="spacer" style="width: 300px; height: 10px;"></div>
+			</div>
+
+           <ion-list class="item-text-wrap">
+
+                <div ng-repeat="point in proposition.support">
+                    <ion-item class="item-thumbnail-left"
+                        href="{{point.URL}}">
+                        <img ng-src="{{point.icon}}">
+                        <h2>{{point.title}}</h2>
+                        <p>{{point.source}}</p>
+                        <p>{{point.author}}</p>
+                    </ion-item>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+                    <div ng-show="point.images" ng-repeat="image in point.images">
+                        <img ng-src="{{image}}">
+                    </div>
+
+                </div>
+
+                <a class="button button-calm button-full item item-icon-left" href="#"><i class="icon ion-android-add"></i>
+                Add More Sources ...</a>
+
+                <a class="button button-calm button-full item item-icon-left" href="#"><i class="icon ion-alert-circled"></i>
+                This is Incorrect ...</a>
+            </ion-list>
+
 		</div>
 
     </ion-content>

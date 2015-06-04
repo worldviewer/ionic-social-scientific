@@ -72,21 +72,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     // Worldview-level
 
-    .state('proposition', {
-        url: "/propositions",
-        abstract: true,
-        templateUrl: "templates/propositions.html"
-    })
+    // .state('proposition', {
+    //     url: "/propositions",
+    //     abstract: true,
+    //     templateUrl: "templates/propositions.html"
+    // })
 
-    .state('proposition.id', {
-        url: '/:propId',
+    // .state('proposition.id', {
+    //     url: '/:propId',
+    //     views: {
+    //         'proposition-id': {
+    //             templateUrl: "templates/proposition-id.html",
+    //             controller: 'PropositionCtrl'
+    //         }
+    //     }
+    // });
+
+    .state('tab.proposition', {
+        url: '/propositions/:propId',
         views: {
-            'proposition-id': {
+            'tab-model': {
                 templateUrl: "templates/proposition-id.html",
                 controller: 'PropositionCtrl'
             }
         }
     });
+
 
     //   .state('tab.chat-detail', {
     //     url: '/chats/:chatId',
