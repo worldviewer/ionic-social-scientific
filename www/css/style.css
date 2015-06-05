@@ -6,7 +6,11 @@ div.list .item-complex .item-content {
 
 /* Fix this so that it's not so random ... */
 
-div.list a.item-text-wrap {
+/*div.list a.item-text-wrap {
+	background-color: aliceblue;
+}*/
+
+.blue-ion-pane {
 	background-color: aliceblue;
 }
 
@@ -15,6 +19,9 @@ div.list a.item-text-wrap {
 	padding: 1em;
 	text-align: center;
 	background-color: aliceblue;
+	border-color: #ddd;
+	border-width: 1px;
+	border-style: solid;
 }
 
 .highlighter {
