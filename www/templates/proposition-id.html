@@ -29,14 +29,128 @@
                         <img ng-src="{{image}}">
                     </div>
 
+	                <div ng-show="point.postscript" class="row">
+	                    <div class="col-10">
+	                        <i class="icon ion-asterisk"></i>
+	                    </div>
+	                    <div class="col-90" ng-bind-html="point.postscript | sanitize"></div>
+	                </div>
+
+					<!-- Replace the following three links with actual 
+					links -->
+
+		           	<a class="item item-icon-left item-icon-right item-text-wrap" href="#/tab/propositions/0/worldviews/0">
+
+						<i class="icon ion-alert-circled"></i>
+                        <p>I Can Counter That</p>
+                        <i class="icon ion-chevron-right"></i>
+
+		            </a>
+
+		            <a class="item item-icon-left item-icon-right item-text-wrap" href="#/tab/propositions/0/models/0">
+
+						<i class="icon ion-lightbulb"></i>
+                        <p>There's a Larger Pattern</p>
+                        <i class="icon ion-chevron-right"></i>
+
+		            </a>
+
+		            <a class="item item-icon-left item-icon-right item-text-wrap" href="#/tab/propositions/0/system1/0">
+
+						<i class="icon ion-speakerphone"></i>
+                        <p>Jump to Conclusions!</p>
+                        <i class="icon ion-chevron-right"></i>
+
+		            </a>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
                 </div>
 
-                <a class="button button-calm button-full item item-icon-left" href="#"><i class="icon ion-android-add"></i>
-                Add More Sources ...</a>
+				<form ng-submit="addComment()">
+					<div class="list">
+						<label class="item item-input">
+							<textarea rows="5" placeholder="Comment"></textarea>
+						</label>
+					</div>
 
-                <a class="button button-calm button-full item item-icon-left" href="#"><i class="icon ion-alert-circled"></i>
-                This is Incorrect ...</a>
+	                <a class="button button-calm button-full item item-icon-left" href="#"><i class="icon ion-android-add"></i>
+	                Add Another Source ...</a>
+                </form>
+
             </ion-list>
+
+		</div>
+
+		<div ng-show="{{proposition.suggestions}}">
+
+            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+			<h3 >Suggestions</h3>
+
+			<ion-list class="item-text-wrap">
+
+				<!-- First do the suggestions that are not moderated -->
+
+				<div ng-repeat="suggestion in proposition.suggestions | filter : !!suggestion.moderate | orderBy : suggestion.score">
+
+					<!-- Make this clickable later, so that each comment can be debated at the worldview level -->
+
+	                <ion-item class="item-thumbnail-left"
+	                    href="#">
+	                    <img ng-src="{{suggestion.avatar}}">
+	                    <h2>{{suggestion.title}}</h2>
+	                    <p>{{suggestion.author}}</p>
+	                </ion-item>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+	                <div class="col-90" ng-bind-html="suggestion.comment | sanitize"></div>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+	                <div ng-show="suggestion.postscript" class="row">
+	                    <div class="col-10">
+	                        <i class="icon ion-asterisk"></i>
+	                    </div>
+	                    <div class="col-90" ng-bind-html="suggestion.postscript | sanitize"></div>
+	                </div>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+				</div>
+
+				<!-- Next, do those posts that have been moderated -->
+
+				<div ng-repeat="suggestion in proposition.suggestions | filter : !suggestion.moderate">
+
+					<!-- Make this clickable later, so that each comment can be debated at the worldview level -->
+
+	                <ion-item class="item-thumbnail-left"
+	                    href="#">
+	                    <img ng-src="{{suggestion.avatar}}">
+	                    <h2>{{suggestion.title}}</h2>
+	                    <p>{{suggestion.author}}</p>
+	                </ion-item>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+	                <span style="color:#BCCACA"><div class="col-90" ng-bind-html="suggestion.comment | sanitize"></div></span>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+	                <div ng-show="suggestion.postscript" class="row">
+	                    <div class="col-10">
+	                        <i class="icon ion-asterisk"></i>
+	                    </div>
+	                    <div class="col-90" ng-bind-html="suggestion.postscript | sanitize"></div>
+	                </div>
+
+		            <div class="spacer" style="width: 300px; height: 10px;"></div>
+
+				</div>
+
+
+			</ion-list>
 
 		</div>
 

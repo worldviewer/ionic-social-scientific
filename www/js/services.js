@@ -10,46 +10,77 @@ angular.module('starter.services', [])
     name: "Cosmic Plasma Debate",
     description: "There has been a debate over how to model cosmic plasmas (such as the solar wind) for more than half a century between the Astrophysical Journal and IEEE's Transactions on Plasma Science.",
     type: "Claim",
-    headerimages: ["img/journals/AJ-vs-IEEE.jpg", ],
-    support: [{images: ["img/books/the-electric-universe-on-astrophysicists.jpg"],
-               title: "Some Electrical Theorists Have Claimed that Astrophysicists Are Not Equipped to Interpet Electrical Astronomical Events",
-               icon: "img/experts/wal-thornhill.jpg",
-               text: null,
-               source: "The Electric Universe",
-               author: "@WalThornhill",
-               URL: "http://www.amazon.com/Electric-Universe-Wallace-Thornhill-Talbott/dp/0977285138/"
+    headerimages: ["img/journals/AJ-vs-IEEE.jpg"],
 
-             }, {
+    support: [{
+      images: ["img/books/the-electric-universe-on-astrophysicists.jpg"],
+      title: "Some Electrical Theorists Have Claimed that Astrophysicists Have Not Been Prepared to Interpet Electrical Astronomical Events",
+      icon: "img/experts/wal-thornhill.jpg",
+      text: null,
+      source: "The Electric Universe",
+      author: "@WalThornhill",
+      URL: "http://www.amazon.com/Electric-Universe-Wallace-Thornhill-Talbott/dp/0977285138/",
+      postscript: null
 
-              images: ["img/journals/IEEE-largest-technical-society-thin.jpg"],
-              title: "What is IEEE?",
-              icon: "img/journals/IEEE.png",
-              text: null,
-              source: "IEEE's Website",
-              author: null,
-              URL: "https://www.ieee.org/about/ieee_history.html"
+    }, {
 
-             }, {
+      images: ["img/journals/IEEE-largest-technical-society-thin.jpg"],
+      title: "What is IEEE?",
+      icon: "img/journals/IEEE.png",
+      text: null,
+      source: "IEEE's Website",
+      author: null,
+      URL: "https://www.ieee.org/about/ieee_history.html",
+      postscript: null
 
-              images: ["img/infographics/hannes-alfven-bio-small.jpg"],
-              title: "The Debate Was Begun by the Nobel Laureate Who Invented the Cosmic Plasma Models Used by Astrophysicists to this Day",
-              icon: "img/experts/david-talbott.jpg",
-              text: null,
-              source: "Edge Magazine (original article currently not online)",
-              author: "@DavidTalbott",
-              URL: "https://plus.google.com/108466508041843226480/posts/YoTuHGL16ur"
+    }, {
 
-             }, {
+      images: ["img/infographics/hannes-alfven-bio-small.jpg"],
+      title: "The Debate Was Begun by the Nobel Laureate Who Invented the Cosmic Plasma Models Used by Astrophysicists to this Day",
+      icon: "img/experts/david-talbott.jpg",
+      text: null,
+      source: "Edge Magazine (original article currently not online)",
+      author: "@DavidTalbott",
+      URL: "https://plus.google.com/108466508041843226480/posts/YoTuHGL16ur",
+      postscript: null
 
-              images: ["img/forums/is-tim-thompson-on-ieee.jpg"],
-              title: "An Example of an Astrophysicist Advising His Colleagues to Avoid Reading IEEE",
-              icon: "img/experts/tim-thompson.jpg",
-              text: null,
-              source: "International Skeptics Forum",
-              author: "@TimThompson",
-              URL: "http://www.internationalskeptics.com/forums/showpost.php?s=808a20363648151505620e5b174cdc4c&p=4782369&postcount=8%EF%BB%BF"
+    }, {
 
-             }],
+      images: ["img/forums/is-tim-thompson-on-ieee.jpg"],
+      title: "An Example of an Astrophysicist Advising His Colleagues to Avoid Reading IEEE",
+      icon: "img/experts/tim-thompson.jpg",
+      text: null,
+      source: "International Skeptics Forum",
+      author: "@TimThompson",
+      URL: "http://www.internationalskeptics.com/forums/showpost.php?s=808a20363648151505620e5b174cdc4c&p=4782369&postcount=8%EF%BB%BF",
+      postscript: null
+
+    }],
+
+    suggestions: [{
+      id: 0,
+      author: "@JimJohnson",
+      avatar: "img/experts/jim-johnson.jpg",
+      title: "Peratt's Galactic Simulations",
+      comment: "What should probably be mentioned is that Peratt has used government supercomputers to simulate proper galactic rotation curves without the need for dark matter.  All that he did was fit the cosmic plasma models to laboratory plasma observations.\n\nSee <a href='http://www.plasma-universe.com/Galaxy_formation'>Ian Tresman's Plasma Wiki Page on Peratt</a>.",
+      postscript: null,
+      date: "June 1, 2015 4:20 PM PST",
+      score: 10,
+      moderate: false
+
+    }, {
+
+      id: 1,
+      author: "@BrianKoberlein",
+      avatar: "img/experts/brian-koberlein.jpg",
+      title: "Bullshit",
+      comment: "The Electric Universe has been debunked.  Please stop the nonsense.",
+      postscript: "We kindly ask that you keep debate at the worldview level (click 'I Can Counter That').  This area is reserved for the accumulation of supporting resources.",
+      date: "June 3, 2015 10:01 PM EST",
+      score: 1,
+      moderate: true
+
+    }]
 
   }, {
 
