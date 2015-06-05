@@ -75,7 +75,7 @@ angular.module('starter.services', [])
       avatar: "img/experts/brian-koberlein.jpg",
       title: "Bullshit",
       comment: "The Electric Universe has been debunked.  Please stop the nonsense.",
-      postscript: "We kindly ask that you keep debate at the worldview level (click 'I Can Counter That').  This area is reserved for the accumulation of supporting resources.",
+      postscript: "We kindly ask that you keep debate at the worldview level ).  This area is reserved for the accumulation of supporting resources.  For debate, go to<br><br><span class='blue-pane'><i class='icon ion-alert-circled'></i>\t&emsp;&emsp;I Can Counter That&emsp;&emsp;<i class='icon ion-chevron-right'></i></span>",
       date: "June 3, 2015 10:01 PM EST",
       score: 1,
       moderate: true
@@ -89,7 +89,7 @@ angular.module('starter.services', [])
     description: "Conventional theory models this flow of charged particles fundamentally as a fluid governed most significantly by gravity, but these models have been in dispute since their inception.",
     type: "Claim",
     headerimages: [""],
-    supportingclaims: {
+    support: {
 
     }    
 

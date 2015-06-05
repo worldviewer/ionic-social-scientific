@@ -85,11 +85,51 @@
 
             <div class="spacer" style="width: 300px; height: 10px;"></div>
 
-			<h3 >Suggestions</h3>
+			<h3>Suggestions</h3>
+
+			<!-- Guidelines for Suggestions -->
 
 			<ion-list class="item-text-wrap">
 
-				<!-- First do the suggestions that are not moderated -->
+                <ion-item class="row warning-background">
+                    <div class="col-10">
+                        <i class="icon ion-asterisk"></i>
+                    </div>
+                    <div class="col-90">
+
+                    	<p>This space is specifically reserved for collecting resources that <b>support</b> this claim.  For debate, go to<br><br><span class='blue-pane'><i class='icon ion-alert-circled'></i>&emsp;&emsp;I Can Counter That&emsp;&emsp;<i class='icon ion-chevron-right'></i></span></p><br>
+
+                    </div>
+				</ion-item>
+			
+				<ion-item class="row warning-background">
+                    <div class="col-10">
+                        <i class="icon ion-asterisk"></i>
+                    </div>
+                    <div class="col-90">
+
+                   		<p>You can use HTML to add <b>bold</b> or <span class="highlighter">highlighter</span>, if it helps others to better skim your content.</p>
+
+                    </div>
+                </ion-item>
+
+				<ion-item class="row warning-background">
+                    <div class="col-10">
+                        <i class="icon ion-asterisk"></i>
+                    </div>
+                    <div class="col-90">
+
+                    	<p>Vote on resources you like by clicking the plus sign; this will help us to rank them.</p>
+
+                    </div>
+                </ion-item>
+			</ion-list>
+
+			<div class="spacer" style="width: 300px; height: 40px;"></div>
+
+			<!-- First do the suggestions that are not moderated -->
+
+			<ion-list class="item-text-wrap">
 
 				<div ng-repeat="suggestion in proposition.suggestions | filter : !!suggestion.moderate | orderBy : suggestion.score">
 
@@ -108,6 +148,16 @@
 
 		            <div class="spacer" style="width: 300px; height: 10px;"></div>
 
+					<!-- Fix this link -->
+
+		           	<a class="item item-icon-left item-icon-right item-text-wrap" href="#/tab/propositions/0/worldviews/0">
+
+						<i class="icon ion-alert-circled"></i>
+                        <p>I Can Counter That</p>
+                        <i class="icon ion-chevron-right"></i>
+
+		            </a>
+
 	                <div ng-show="suggestion.postscript" class="row">
 	                    <div class="col-10">
 	                        <i class="icon ion-asterisk"></i>
@@ -117,9 +167,13 @@
 
 		            <div class="spacer" style="width: 300px; height: 10px;"></div>
 
-				</div>
+				</div> <!-- ng-repeat end -->
 
-				<!-- Next, do those posts that have been moderated -->
+			</ion-list>
+
+			<!-- Next, do those posts that have been moderated -->
+
+			<ion-list class="item-text-wrap">
 
 				<div ng-repeat="suggestion in proposition.suggestions | filter : !suggestion.moderate">
 
@@ -148,7 +202,6 @@
 		            <div class="spacer" style="width: 300px; height: 10px;"></div>
 
 				</div>
-
 
 			</ion-list>
 

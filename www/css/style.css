@@ -1,5 +1,26 @@
 /* Empty. Add your own CSS if you like */
 
-.list .item-complex .item-content {
+div.list .item-complex .item-content {
 	background-color: aliceblue;
+}
+
+/* Fix this so that it's not so random ... */
+
+div.list a.item-text-wrap {
+	background-color: aliceblue;
+}
+
+.blue-pane {
+	width: 100%;
+	padding: 1em;
+	text-align: center;
+	background-color: aliceblue;
+}
+
+.highlighter {
+	background-color: yellow;
+}
+
+.warning-background {
+	background-color: #FFF0F0;
 }
