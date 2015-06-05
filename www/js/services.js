@@ -62,7 +62,7 @@ angular.module('starter.services', [])
       author: "@JimJohnson",
       avatar: "img/experts/jim-johnson.jpg",
       title: "Peratt's Galactic Simulations",
-      comment: "What should probably be mentioned is that Peratt has used government supercomputers to simulate proper galactic rotation curves without the need for dark matter.  All that he did was fit the cosmic plasma models to laboratory plasma observations.\n\nSee <a href='http://www.plasma-universe.com/Galaxy_formation'>Ian Tresman's Plasma Wiki Page on Peratt</a>.",
+      comment: "What should probably be mentioned is that Peratt has used government supercomputers to simulate proper galactic rotation curves without the need for dark matter.  All that he did was fit the cosmic plasma models to laboratory plasma observations.\n\nSee <a href='http://www.plasma-universe.com/Galaxy_formation'>Ian Tresman's Plasma Wiki Page on Peratt</a>   <i class='icon ion-plus-circled'></i>.",
       postscript: null,
       date: "June 1, 2015 4:20 PM PST",
       score: 10,
@@ -75,7 +75,7 @@ angular.module('starter.services', [])
       avatar: "img/experts/brian-koberlein.jpg",
       title: "Bullshit",
       comment: "The Electric Universe has been debunked.  Please stop the nonsense.",
-      postscript: "We kindly ask that you keep debate at the worldview level ).  This area is reserved for the accumulation of supporting resources.  For debate, go to<br><br><span class='blue-pane'><i class='icon ion-alert-circled'></i>\t&emsp;&emsp;I Can Counter That&emsp;&emsp;<i class='icon ion-chevron-right'></i></span>",
+      postscript: "We kindly ask that you keep debate containered in the worldview pages.  This area is reserved for the accumulation of supporting resources.  For debate, go to<br><br><span class='blue-pane'><i class='icon ion-alert-circled'></i>\t&emsp;&emsp;I Can Counter That&emsp;&emsp;<i class='icon ion-chevron-right'></i></span><br><br>",
       date: "June 3, 2015 10:01 PM EST",
       score: 1,
       moderate: true
