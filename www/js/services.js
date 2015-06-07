@@ -1,8 +1,133 @@
 angular.module('starter.services', [])
 
+// This is used for sanitizing raw HTML that is fed from the db
 .filter("sanitize", ['$sce', function($sce) {return function(htmlCode){
         return $sce.trustAsHtml(htmlCode);}
 }])
+
+.service('AuthService', function($q, $http, USER_ROLES) {
+  var LOCAL_TOKEN_KEY = 'yourTokenKey';
+  var username = '';
+  var isAuthenticated = false;
+  var role = '';
+  var authToken;
+
+  function loadUserCredentials() {
+    var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
+
+    if (token) {
+      useCredentials(token);
+    }
+  };
+
+  // Note that if there was a checkbox to Remember Me or Keep Me
+  // Logged In, and the user does not check it, we'd use the 
+  // session storage so that authorizatio is deleted when the
+  // user leaves the website.  For now, we don't have that checkbox,
+  // so we just use the localStorage.
+  function storeUserCredentials(token) {
+    window.localStorage.setItem(LOCAL_TOKEN_KEY, token);
+    useCredentials(token);
+  };
+
+  function useCredentials(token) {
+    // Extract the username from the token
+    username = token.split('.')[0];
+
+    isAuthenticated = true;
+    authToken = token;
+
+    if (username == 'admin') {
+      role = USER_ROLES.admin
+    }
+
+    if (username == 'public') {
+      role = USER_ROLES.public
+    }
+
+    // Set the default headers for your next request.  REST API's
+    // will most of the time have some authentication based on the
+    // X-Auth-Token, so if we set the default headers, all of our
+    // next requests will be signed with this token.
+    $http.defaults.headers.common['X-Auth-Token'] = token;
+  };
+
+  function destroyUserCredentials() {
+    authToken = undefined;
+    username = '';
+    isAuthenticated = false;
+    $http.defaults.headers.common['X-Auth-Token'] = undefined;
+    window.localStorage.removeItem(LOCAL_TOKEN_KEY);
+  };
+
+  var login = function(name, pw) {
+
+    // promise
+    return $q(function(resolve, reject) {
+      if ((name == 'admin') && (pw == '1') ||
+          (name == 'user') && (pw == '1')) {
+
+        // If we are actually authenticated, the server should
+        // return some token.  We should store those user credentials.
+        storeUserCredentials(name + '.yourServerToken');
+        resolve('Login success.');
+      } else {
+        reject('Login failed.');
+      }
+    });
+  };
+
+  var logout = function() {
+    destroyUserCredentials();
+  }
+
+  var isAuthorized = function(authorizedRoles) {
+    if (!angular.isArray(authorizedRoles)) {
+      authorizedRoles = [authorizedRoles];
+    }
+
+    // Grant access if our user roles are inside of the array
+    // of authorizedRoles
+    return (isAuthenticated && authorizedRoles.indexOf(role) != -1)
+  }
+
+  // When our service is initiated, we want to check if we already
+  // have some user credentials stored, so that we recognize the user
+  // and can automatically log them in.
+
+  loadUserCredentials();
+
+  return {
+    login: login,
+    logout: logout,
+    isAuthorized: isAuthorized,
+    isAuthenticated: function() { return isAuthenticated; },
+    username: function() { return username; },
+    role: function() { return role; }
+  }
+})
+
+// This will intercept all of our http calls to check for HTTP
+// requests which return either 401 or 403.  When either of those
+// statuses is returned, we broadcast an event and the request
+// is not completed.
+.factory("AuthInterceptor", function($rootScope, $q, AUTH_EVENTS) {
+  return {
+    responseError: function(response) {
+      $rootScope.$broadcast({
+        401: AUTH_EVENTS.notAuthenticated,
+        403: AUTH_EVENTS.notAuthorized
+      }[response.status], response);
+
+      return $q.reject(response);
+    }
+  }
+})
+
+// This injects our AuthInterceptor
+.config(function($httpProvider) {
+  $httpProvider.interceptors.push('AuthInterceptor');
+})
 
 .factory("Proposition", [function() {
   var propositions = [{
