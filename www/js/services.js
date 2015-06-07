@@ -319,6 +319,8 @@ angular.module('starter.services', [])
 
       }],
 
+      // Add in article at https://www.nasa.gov/mission_pages/themis/news/themis_leaky_shield.html#.VXNBYDTF8vE
+
       articles: [{
           title: "Solar Wind Surprise",
           authors: ["@StuartWolpert", "@AnthonyWatts"],
@@ -417,6 +419,8 @@ angular.module('starter.services', [])
           postscript: "This text is similar to Don Scott's The Electric Sky; both are useful for understanding the more electrical side of the debate over how to model cosmic plasmas."
 
       }],
+
+      // Add in video at https://www.nasa.gov/mission_pages/themis/news/themis_leaky_shield.html#.VXNBYDTF8vE
 
       media: [{
           title: "Our Changing Climate and the Variable Sun",
